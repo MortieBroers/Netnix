@@ -32,7 +32,7 @@ try {
         $Password = $_POST['password'];
         $PassAndEmail = $Email . $Password;
         $PasswordHash = hash('sha256', $PassAndEmail);
-        $select = $con->prepare("SELECT * FROM profile WHERE Email=:Email");
+        $select = $con->prepare("SELECT * FROM account WHERE Email=:Email");
         $select->bindParam(':Email', $Email);
         $select->setFetchMode(PDO::FETCH_ASSOC);
         $select->execute();
@@ -44,7 +44,7 @@ try {
             $_SESSION['loginToken'] = $loginToken;
             echo $_SESSION['loginToken'];
 
-            $select = $con->prepare("UPDATE profile SET LoginToken=:loginToken WHERE Email=:Email");
+            $select = $con->prepare("UPDATE account SET LoginToken=:loginToken WHERE Email=:Email");
             $select->bindParam(':loginToken', $loginToken);
             $select->bindParam(':Email', $Email);
             $select->execute();

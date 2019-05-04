@@ -37,7 +37,7 @@ if (isset($_POST['Register'])) {
     $Username = $_POST['username'];
 
 
-    $selectCheck = $con->prepare("SELECT * FROM profile WHERE Email = '$Email'");
+    $selectCheck = $con->prepare("SELECT * FROM account WHERE Email = '$Email'");
     $selectCheck->execute();
     $row = $selectCheck->fetch();
     if ($row) {
