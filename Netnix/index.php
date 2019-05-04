@@ -27,19 +27,6 @@ require_once "navbar.php";
         $select2->setFetchMode(PDO::FETCH_ASSOC);
         $select2->execute();
         $rowProfile = $select2->fetch();
-        echo "<table class='w3-bordered w3-border indexStuff'";
-        echo "<tr class='w3-border'>";
-        echo "  <th>Name</th>
-                <th>Message</th> 
-                <th>Date</th>
-              </tr>";
-        echo "<tr class='w3-border'>";
-        echo "<td>" . $rowProfile['Firstname'] . " " . $rowProfile['Lastname'] . "</td>"
-            . "<td>" . $row['Message'] . "</td>"
-            . "<td>" . $row['DateTime'] . "</td>";
-        echo "</tr>";
-        echo "<br/>";
-        echo "</table>";
     }
 
 
