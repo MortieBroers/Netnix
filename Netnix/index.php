@@ -2,21 +2,13 @@
 require_once "navbar.php";
 
 ?>
-<h1 class="w3-container w3-blue w3-center w3-allerta TextBar">New message</h1>
-<form method="POST">
-    <textarea class="indexStuff" name="message" rows="5" cols="40" required>
-</textarea><br /><br />
-    <input class='w3-btn w3-blue w3-round-xlarge indexStuff' type="submit" name="Post" value="Post">
-</form>
-
 <div>
     <h2 class="w3-container w3-blue w3-center w3-allerta TextBar">Posted Messages</h2>
     <?php
 
     $loginToken = $_SESSION['loginToken'];
 
-    $select = $con->prepare("SELECT * FROM message WHERE Profile_idUser = :dbidUser OR Profile_idUser IN (SELECT Profile_idUser1 
-                             FROM profile_is_friends_with_profile WHERE Profile_idUser = :dbidUser ) ORDER BY DateTime DESC");
+    $select = $con->prepare("SELECT * FROM film ORDER BY film_id DESC");
     $select->bindParam(':dbidUser',  $dbidUser);
     $select->setFetchMode(PDO::FETCH_ASSOC);
     $select->execute();
