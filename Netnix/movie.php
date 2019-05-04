@@ -14,7 +14,7 @@ require_once "navbar.php";
         $select->setFetchMode(PDO::FETCH_ASSOC);
         $select->execute();
         $rowProfile = $select->fetch();
-        echo "<table class='w3-bordered w3-border indexStuff'";
+        echo "<table class='w3-bordered w3-border indexStuff'>";
         echo "<tr class='w3-border'>";
         echo "  <th>Title</th>
               </tr>";
