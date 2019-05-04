@@ -12,16 +12,16 @@ session_start();
 
 echo <<<END
 <h1 class='w3-blue w3-center w3-allerta TextBar'>Register</h1>
-<form method="POST" class='w3-display-middle w3-container'>
-    <label>Email</label>
-    <input class="w3-input w3-border" type="email" name="email" placeholder="Email" required><br/><br/>
+<form method="POST" class='w3-display-middle w3-container'>   
     <label>Username</label>
     <input class="w3-input w3-border" type="text" name="username" placeholder="Username" required><br/><br/>    
     <label>Password</label>
     <input class="w3-input w3-border" type="password" name="password" placeholder="Password" required><br/><br/>
+    <label>Email</label>
+    <input class="w3-input w3-border" type="email" name="email" placeholder="Email" required><br/><br/>
     <input class='w3-btn w3-blue w3-round-xlarge' type="submit" name="Register" value="Register">  
     <div name="Back">
-     <a>Already Signed Up?  </a><a class='w3-center' href="login.php">Login Here!</a>
+    <a>Already Signed Up?  </a><a class='w3-center' href="login.php">Login Here!</a>
   </div>   
     
 </form>
