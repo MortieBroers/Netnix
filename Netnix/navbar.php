@@ -25,7 +25,7 @@
             CheckLoginToken();
 
             require_once "getprofile.php";
-            echo "Hi" . $dbUsername;
+            echo "Hi" . " " . $dbUsername;
             ?>
         </a>
     </div>
