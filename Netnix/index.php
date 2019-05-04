@@ -8,19 +8,22 @@ require_once "navbar.php";
 
     $loginToken = $_SESSION['loginToken'];
 
-    $select = $con->prepare("SELECT * FROM film ORDER BY film_id DESC");
-    $select->bindParam(':dbidUser',  $dbidUser);
-    $select->setFetchMode(PDO::FETCH_ASSOC);
-    $select->execute();
-
     while ($row = $select->fetch()) {
-        $query = "SELECT * FROM profile WHERE idUser = " . $row['Profile_idUser'];
+        $query = "SELECT title FROM film ORDER BY film_id DESC";
         $select2 = $con->prepare($query);
         $select2->setFetchMode(PDO::FETCH_ASSOC);
         $select2->execute();
         $rowProfile = $select2->fetch();
+        echo "<table class='w3-bordered w3-border indexStuff'";
+        echo "<tr class='w3-border'>";
+        echo "  <th>Title</th>
+              </tr>";
+        echo "<tr class='w3-border'>";
+        echo "<td>" . $rowProfile['title'] . "</td>";
+        echo "</tr>";
+        echo "<br/>";
+        echo "</table>";
     }
-
 
 
     ?>
