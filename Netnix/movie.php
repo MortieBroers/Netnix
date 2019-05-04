@@ -8,8 +8,15 @@
     $select->execute();
     echo "<table border='1'>";
     while ($row = $select->fetch()) {
+        echo"<tr>";
+        echo"<th>";
+        echo"Title";
+        echo"</th>";
+        echo"Description"
+        echo"<th>";
+        echo"</th>";
+        echo"</tr>";
         echo "  <tr>";
-
         echo "    <td>";
         echo $row['title'];
         echo "    </td>";
