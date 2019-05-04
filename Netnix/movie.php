@@ -7,14 +7,14 @@
     $select->setFetchMode(PDO::FETCH_ASSOC);
     $select->execute();
     echo "<table border='1'>";
-    while ($row = $select->fetch()) {
         echo"<tr>";
         echo"<th>";
         echo"Title";
-        echo"</th>";
-        echo"Description";
+        echo"</th>";        
         echo"<th>";
+        echo"Description";
         echo"</th>";
+    while ($row = $select->fetch()) {
         echo"</tr>";
         echo "  <tr>";
         echo "    <td>";
