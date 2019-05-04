@@ -8,5 +8,5 @@ $select->setFetchMode(PDO::FETCH_ASSOC);
 $select->execute();
 $data = $select->fetch();
 $dbidUser = $data['ID'];
-$dbUsername = $data['Firstname'];
+$dbUsername = $data['Username'];
 $dbEmail = $data['Email'];
