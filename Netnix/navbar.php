@@ -16,7 +16,6 @@
         <a href="movie.php" id='friendsButton' class=" w3-button w3-mobile navbarButtonWidth">Movie</a>
         <a href="logout.php" id='logoutButton' class=" w3-button w3-mobile navbarButtonWidth">Logout</a>
         <a>
-            <img class="userimagesmall" src=".\img\unknownperson.png" />
             <?php
             session_start();
 
@@ -26,7 +25,7 @@
             CheckLoginToken();
 
             require_once "getprofile.php";
-            echo $dbUsername;
+            echo "Hi" . $dbUsername;
             ?>
         </a>
     </div>
