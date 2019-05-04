@@ -3,7 +3,7 @@ require_once "navbar.php";
 
 ?>
 <div>
-    <h2 class="w3-container w3-blue w3-center w3-allerta TextBar">Posted Messages</h2>
+    <h2 class="w3-container w3-blue w3-center w3-allerta TextBar">Movies</h2>
     <?php
 
     $loginToken = $_SESSION['loginToken'];
@@ -24,8 +24,6 @@ require_once "navbar.php";
         echo "<br/>";
         echo "</table>";
     }
-
-
     ?>
 
 </div>
