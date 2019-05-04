@@ -17,7 +17,7 @@ function CheckLoginToken()
 function ShowAllMovies()
 {
     require_once "config.1.php";
-    require_once "getprofile.php";
+    $con = connection();
 
     $select = $con->prepare("SELECT * FROM film");
     $select->setFetchMode(PDO::FETCH_ASSOC);
