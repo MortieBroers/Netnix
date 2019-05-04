@@ -9,7 +9,7 @@ require_once "navbar.php";
     $loginToken = $_SESSION['loginToken'];
 
     while ($row = $select->fetch()) {
-        $query = "SELECT title FROM film ORDER BY film_id DESC";
+        $query = "SELECT * FROM film ORDER BY film_id DESC";
         $select2 = $con->prepare($query);
         $select2->setFetchMode(PDO::FETCH_ASSOC);
         $select2->execute();
