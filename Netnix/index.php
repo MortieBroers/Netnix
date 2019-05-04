@@ -9,11 +9,11 @@ require_once "navbar.php";
     $loginToken = $_SESSION['loginToken'];
 
     while ($row = $select->fetch()) {
-        $query = "SELECT * FROM film ORDER BY film_id DESC";
-        $select2 = $con->prepare($query);
-        $select2->setFetchMode(PDO::FETCH_ASSOC);
-        $select2->execute();
-        $rowProfile = $select2->fetch();
+        $query = "SELECT * FROM film";
+        $select = $con->prepare($query);
+        $select->setFetchMode(PDO::FETCH_ASSOC);
+        $select->execute();
+        $rowProfile = $select->fetch();
         echo "<table class='w3-bordered w3-border indexStuff'";
         echo "<tr class='w3-border'>";
         echo "  <th>Title</th>
