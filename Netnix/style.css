@@ -1,6 +1,5 @@
 body {
   background-color: #ffffff;
-  background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/cs5VEr4/peaceful-scene-of-sunset-on-calm-blue-sea-with-fishermans-in-background_71f-0bcu__F0000.png");
   background-attachment: fixed;
 }
 
@@ -36,6 +35,10 @@ table {
   margin-top: 0;
   margin-bottom: 0;
   padding: 4px 0;
+}
+
+.navbar {
+  position: fixed;
 }
 
 .navbarWidth {

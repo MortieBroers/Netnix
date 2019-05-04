@@ -14,6 +14,37 @@ function CheckLoginToken()
     }
 }
 
+function ShowSearchedMovies()
+{
+    require_once "config.1.php";
+    $con = connection();
+
+    $select = $con->prepare("SELECT * FROM film WHERE ");
+    $select->setFetchMode(PDO::FETCH_ASSOC);
+    $select->execute();
+    echo "<table border='1'>";
+    echo "<tr>";
+    echo "<th>";
+    echo "Title";
+    echo "</th>";
+    echo "<th>";
+    echo "Description";
+    echo "</th>";
+    while ($row = $select->fetch()) {
+        echo "</tr>";
+        echo "  <tr>";
+        echo "    <td>";
+        echo $row['title'];
+        echo "    </td>";
+        echo "    <td>";
+        echo $row['description'];
+        echo "    </td>";
+        echo "    </td>";
+        echo "  </tr>";
+    }
+    echo "</table>";
+}
+
 function ShowAllMovies()
 {
     require_once "config.1.php";

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="w3-bar w3-black w3-center navbarWidth">
+    <div class="w3-bar w3-black w3-center navbarWidth navbar">
         <a href="index.php" id="hyvebook">Netnix</a>
         <a href=" index.php" id='homeButton' class=" w3-button w3-mobile navbarButtonWidth">Home</a>
         <a href="movie.php" id='friendsButton' class=" w3-button w3-mobile navbarButtonWidth">Movie</a>
