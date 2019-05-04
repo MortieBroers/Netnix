@@ -15,14 +15,10 @@ echo <<<END
 <form method="POST" class='w3-display-middle w3-container'>
     <label>Email</label>
     <input class="w3-input w3-border" type="email" name="email" placeholder="Email" required><br/><br/>
+    <label>Username</label>
+    <input class="w3-input w3-border" type="text" name="username" placeholder="Username" required><br/><br/>    
     <label>Password</label>
     <input class="w3-input w3-border" type="password" name="password" placeholder="Password" required><br/><br/>
-    <label>Firstname</label>
-    <input class="w3-input w3-border" type="text" name="firstname" placeholder="Firstname" required><br/><br/>
-    <label>Lastname</label>
-    <input class="w3-input w3-border" type="text" name="lastname" placeholder="Lastname" required><br/><br/>
-    <label>Description</label> <br/>
-    <textarea class="class="w3-input w3-border" rows="5" cols="40" name="description" required></textarea><br/><br/>  
     <input class='w3-btn w3-blue w3-round-xlarge' type="submit" name="Register" value="Register">  
     <div name="Back">
      <a>Already Signed Up?  </a><a class='w3-center' href="login.php">Login Here!</a>
@@ -38,9 +34,8 @@ if (isset($_POST['Register'])) {
 
     $Email = $_POST['email'];
     $Password = $_POST['password'];
-    $Firstname = $_POST['firstname'];
-    $Lastname = $_POST['lastname'];
-    $Description = $_POST['description'];
+    $Username = $_POST['username'];
+
 
     $selectCheck = $con->prepare("SELECT * FROM profile WHERE Email = '$Email'");
     $selectCheck->execute();
@@ -53,7 +48,7 @@ if (isset($_POST['Register'])) {
         $PassAndEmail = $Email . $Password;
         $PasswordHash = hash('sha256', $PassAndEmail);
 
-        $select = $con->prepare("INSERT INTO profile(Email,Password,Firstname,Lastname,Description,LoginToken) VALUES ('$Email','$PasswordHash','$Firstname','$Lastname','$Description','') ");
+        $select = $con->prepare("INSERT INTO profile(Username,Password,Email,LoginToken) VALUES ('$Username','$PasswordHash','$Email','') ");
         $select->execute();
         Redirect('login.php', false);
     }
