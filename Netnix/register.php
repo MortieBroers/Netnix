@@ -48,7 +48,7 @@ if (isset($_POST['Register'])) {
         $PassAndEmail = $Email . $Password;
         $PasswordHash = hash('sha256', $PassAndEmail);
 
-        $select = $con->prepare("INSERT INTO profile(Username,Password,Email,LoginToken) VALUES ('$Username','$PasswordHash','$Email','') ");
+        $select = $con->prepare("INSERT INTO account(Username,Password,Email,LoginToken) VALUES ('$Username','$PasswordHash','$Email','') ");
         $select->execute();
         Redirect('login.php', false);
     }
