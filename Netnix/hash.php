@@ -8,7 +8,7 @@
 if (isset($_POST['login'])) {
     $Password = $_POST['password'];
     $PasswordHash = password_hash($Password, PASSWORD_DEFAULT);
-    password_verify($Password,$db)
-    echo $PasswordHash
+    password_verify($Password, $db);
+    echo $PasswordHash;
 }
- ?>
+?>

@@ -15,4 +15,3 @@ function CheckLoginToken(){
         Redirect('login.php', false);
     }
 }
-?>
