@@ -3,7 +3,7 @@ require_once "navbar.php";
 
 ?>
 <div>
-    <h2 class="w3-container w3-blue w3-center w3-allerta TextBar">Movies</h2>
+    <h2 class="w3-container w3-blue w3-center w3-allerta TextBar">Home</h2>
     <?php
 
     $loginToken = $_SESSION['loginToken'];
