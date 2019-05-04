@@ -12,7 +12,7 @@
         echo"<th>";
         echo"Title";
         echo"</th>";
-        echo"Description"
+        echo"Description";
         echo"<th>";
         echo"</th>";
         echo"</tr>";
