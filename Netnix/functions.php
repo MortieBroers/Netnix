@@ -14,64 +14,58 @@ function CheckLoginToken()
     }
 }
 
-function ShowSearchedMovies()
+function ShowSomeMovies()
+
 {
     require_once "config.1.php";
     $con = connection();
-
-    $select = $con->prepare("SELECT * FROM film WHERE ");
+    $select = $con->prepare("SELECT * FROM film AS title LIMIT 6");
     $select->setFetchMode(PDO::FETCH_ASSOC);
     $select->execute();
-    echo "<table border='1'>";
-    echo "<tr>";
-    echo "<th>";
-    echo "Title";
-    echo "</th>";
-    echo "<th>";
-    echo "Description";
-    echo "</th>";
+    echo '<br>';
+    echo '<h2 class="ui center aligned header">';
+    echo 'Some Movies For You: ';
+    echo '</h2>';
+    echo '<br>';
+    echo '<div class="ui three column doubling grid container">';
     while ($row = $select->fetch()) {
-        echo "</tr>";
-        echo "  <tr>";
-        echo "    <td>";
-        echo $row['title'];
-        echo "    </td>";
-        echo "    <td>";
-        echo $row['description'];
-        echo "    </td>";
-        echo "    </td>";
-        echo "  </tr>";
+        echo '<div class="column">';
+        echo '<button class="ui segment">';
+        echo '<img src=' . $row["Image"] . ' style="max-height: 100px; width: auto;" >';
+        echo '<br></br>';
+        echo $row["title"];
+        echo '<br></br>';
+        echo $row["description"];
+        echo '</button>';
+        echo '</div>';
     }
-    echo "</table>";
+    echo '</div>';
 }
 
-function ShowAllMovies()
+function ShowAllMoviesSearch($searchText)
 {
     require_once "config.1.php";
     $con = connection();
 
-    $select = $con->prepare("SELECT * FROM film");
+    $select = $con->prepare("SELECT * FROM film WHERE title like '%" . $searchText . "%'");
     $select->setFetchMode(PDO::FETCH_ASSOC);
     $select->execute();
-    echo "<table border='1'>";
-    echo "<tr>";
-    echo "<th>";
-    echo "Title";
-    echo "</th>";
-    echo "<th>";
-    echo "Description";
-    echo "</th>";
+    echo '<br>';
+    echo '<h2 class="ui center aligned header">';
+    echo "Searching for: $searchText";
+    echo '</h2>';
+    echo '<br>';
+    echo '<div class="ui two column stackable grid container">';
     while ($row = $select->fetch()) {
-        echo "</tr>";
-        echo "  <tr>";
-        echo "    <td>";
-        echo $row['title'];
-        echo "    </td>";
-        echo "    <td>";
-        echo $row['description'];
-        echo "    </td>";
-        echo "    </td>";
-        echo "  </tr>";
+        echo '<div class="column">';
+        echo '<button class="ui segment">';
+        echo '<img src=' . $row["Image"] . ' style="max-height: 250px; width: auto;" >';
+        echo '<br></br>';
+        echo $row["title"];
+        echo '<br></br>';
+        echo $row["description"];
+        echo '</button>';
+        echo '</div>';
     }
-    echo "</table>";
+    echo '</div>';
 }

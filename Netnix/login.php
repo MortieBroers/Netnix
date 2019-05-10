@@ -1,21 +1,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 <script src='jquery-3.3.1.min.js'></script>
 
-<link rel="stylesheet" type="text/css" href="style.css">
-<h1 class='w3-container w3-blue w3-center w3-allerta TextBar'> Login here</h1>
+<link rel="stylesheet" type="text/css" href="../Semantic/semantic.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+</script>
+<style>
+    body>.grid {
+        height: 80%;
+    }
+    .column {
+        max-width: 450px;
+    }
+</style>
+<script>
 
-<form method="POST" class='w3-display-middle w3-container'>
-    <label>Email</label>
-    <input type="email" name="email" placeholder="Email" class="w3-input w3-border" required><br /><br />
-    <label>Password</label>
-    <input type="password" name="password" placeholder="*******" class="w3-input w3-border" required><br /><br />
-    <input class='w3-btn w3-blue w3-round-xlarge' type="submit" name="login" value="Login">
-    <div name="Regist">
-        No Account? <a href="register.php">Signup Here!</a>
+</script>
+<script src="../Semantic/semantic.min.js"></script>
+
+<body>
+    <div class="ui inverted vertical masthead center aligned segment">
+        <div class="ui text container">
+            <h1 class="ui inverted header">
+                Welcome to Netnix
+            </h1>
+            <h2>Log-In To Your Account.</h2>
+        </div>
     </div>
-</form>
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <form method="POST" class="ui large form">
+                <div class="ui stacked secondary  segment">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="password" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <button name="login" value="Login" class="ui button" type="submit">Login</button>
+                </div>
+            </form>
+            <div class="ui message">
+                New to us? <a href="register.php">Register</a>
+            </div>
+        </div>
+    </div>
+</body>
 
 <?php
 session_start();
@@ -50,7 +86,10 @@ try {
             $select->execute();
             header("location:index.php");
         } else {
-            echo "Invalid Email or Password";
+            echo
+                "<p class='ui error message'>
+                Invalid Email or Password
+            </p>";
         }
     }
 } catch (PDOException $error) {
